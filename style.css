@@ -1,41 +1,76 @@
-/* Animation Fade-In */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
+/* style.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+nav {
+  background-color: #0073aa;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Badges spécifiques */
-.badge {
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+header {
+  padding: 50px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  color: #0073aa;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+.button {
   display: inline-block;
-  padding: 8px 15px;
-  margin: 5px;
-  border-radius: 20px;
-  font-size: 1rem;
+  background-color: #0073aa;
+  color: white;
+  padding: 10px 25px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-decoration: none;
   transition: background-color 0.3s;
 }
 
-/* Badges Hard Skills - Bleu */
-.badge-hard {
-  background-color: #0073aa;
-  color: white;
-}
-.badge-hard:hover {
+.button:hover {
   background-color: #005f88;
 }
 
-/* Badges Soft Skills - Orange */
-.badge-soft {
-  background-color: #f39c12;
-  color: white;
-}
-.badge-soft:hover {
-  background-color: #d68910;
+iframe {
+  width: 90%;
+  height: 800px;
+  border: none;
+  background: white;
 }
