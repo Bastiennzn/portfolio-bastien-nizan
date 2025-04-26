@@ -1,3 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Compétences - Bastien Nizan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .skills-section {
+      margin-top: 40px;
+    }
+    .skills-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #0073aa;
+      margin-bottom: 20px;
+    }
+    .skills-title svg {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #0073aa;
+      color: white;
+      padding: 8px 15px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .badge:hover {
+      background-color: #005f88;
+    }
+    .soft-badge {
+      background-color: #f39c12;
+    }
+    .soft-badge:hover {
+      background-color: #d68910;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="competences.html">Compétences</a>
+  <a href="projets.html">Projets</a>
+  <a href="cv.html">CV</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Compétences</h1>
+</header>
+
 <section>
   <div class="skills-section">
     <div class="skills-title">
@@ -9,15 +67,15 @@
     </div>
 
     <div>
-      <span class="badge badge-hard">Virtualisation : VMware ESXi, VirtualBox</span>
-      <span class="badge badge-hard">Linux, Windows Server</span>
-      <span class="badge badge-hard">Réseaux : Cisco, DHCP, IP, VLAN</span>
-      <span class="badge badge-hard">Développement : HTML/CSS, Python, PHP, C#</span>
-      <span class="badge badge-hard">Cybersécurité : Root Me, OSINT</span>
+      <span class="badge">Virtualisation : VMware ESXi, VirtualBox</span>
+      <span class="badge">Linux, Windows Server</span>
+      <span class="badge">Réseaux : Cisco, DHCP, IP, VLAN</span>
+      <span class="badge">Développement : HTML/CSS, Python, PHP, C#</span>
+      <span class="badge">Cybersécurité : Root Me, OSINT</span>
     </div>
   </div>
 
-  <div class="skills-section" style="animation-delay: 0.3s;">
+  <div class="skills-section">
     <div class="skills-title">
       <!-- Icône Soft Skills -->
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,10 +85,17 @@
     </div>
 
     <div>
-      <span class="badge badge-soft">Curieux</span>
-      <span class="badge badge-soft">Ponctuel</span>
-      <span class="badge badge-soft">Ouvert d'esprit</span>
-      <span class="badge badge-soft">Motivé</span>
+      <span class="badge soft-badge">Curieux</span>
+      <span class="badge soft-badge">Ponctuel</span>
+      <span class="badge soft-badge">Ouvert d'esprit</span>
+      <span class="badge soft-badge">Motivé</span>
     </div>
   </div>
 </section>
+
+<footer>
+  &copy; 2025 Bastien Nizan
+</footer>
+
+</body>
+</html>
