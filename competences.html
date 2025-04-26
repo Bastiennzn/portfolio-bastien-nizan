@@ -22,7 +22,8 @@
       margin-right: 10px;
     }
     .badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       background-color: #0073aa;
       color: white;
       padding: 8px 15px;
@@ -30,6 +31,12 @@
       border-radius: 20px;
       font-size: 1rem;
       transition: background-color 0.3s;
+    }
+    .badge img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      border-radius: 50%;
     }
     .badge:hover {
       background-color: #005f88;
@@ -67,11 +74,26 @@
     </div>
 
     <div>
-      <span class="badge">Virtualisation : VMware ESXi, VirtualBox</span>
-      <span class="badge">Linux, Windows Server</span>
-      <span class="badge">Réseaux : Cisco, DHCP, IP, VLAN</span>
-      <span class="badge">Développement : HTML/CSS, Python, PHP, C#</span>
-      <span class="badge">Cybersécurité : Root Me, Hack the Box, TryHackMe, Hackropole, OSINTOPIA</span>
+      <span class="badge">
+        <img src="images/rootme-logo.png" alt="Root Me Logo">
+        Root Me
+      </span>
+      <span class="badge">
+        <img src="images/tryhackme-logo.png" alt="TryHackMe Logo">
+        TryHackMe
+      </span>
+      <span class="badge">
+        <img src="images/hackthebox-logo.png" alt="Hack The Box Logo">
+        Hack The Box
+      </span>
+      <span class="badge">
+        <img src="images/hackropole-logo.png" alt="Hackropole Logo">
+        Hackropole
+      </span>
+      <span class="badge">
+        <img src="images/osintopia-logo.png" alt="OSINTOPIA Logo">
+        OSINTOPIA
+      </span>
     </div>
   </div>
 
