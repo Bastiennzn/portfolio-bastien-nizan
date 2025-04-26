@@ -5,13 +5,23 @@
   <title>Accueil - Bastien Nizan</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Ajout de styles pour l'image */
+    /* Styles pour l'image */
+    .profile-container {
+      display: flex;
+      align-items: center; /* Aligne verticalement avec le texte "Bienvenue" */
+      gap: 15px; /* Espace entre l'image et le texte */
+    }
+
     .profile-image {
-      width: 100px; /* Taille de l'icône */
-      height: 100px;
+      width: 150px; /* Taille plus grande de l'image */
+      height: 150px; /* Correspond à la largeur */
       border-radius: 50%; /* Rend l'image ronde */
-      float: left; /* Aligne l'image à gauche */
-      margin-right: 20px; /* Espace entre l'image et le texte */
+    }
+
+    .welcome-section {
+      display: flex;
+      align-items: center; /* Aligne verticalement */
+      gap: 20px; /* Espace entre l'image et le texte */
     }
   </style>
 </head>
@@ -26,16 +36,22 @@
 </nav>
 
 <header>
-  <img src="photo.jpg" class="profile-image">
-  <h1>Bastien Nizan</h1>
-  <p>Futur Ingénieur en Cyberdéfense</p>
+  <div class="profile-container">
+    <img src="images/photo.jpg" alt="Photo de Bastien Nizan" class="profile-image">
+    <div>
+      <h1>Bastien Nizan</h1>
+      <p>Futur Ingénieur en Cyberdéfense</p>
+    </div>
+  </div>
 </header>
 
-<section>
-  <h2>Bienvenue</h2>
-  <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel en cyberdéfense. </p>
-
-  <a href="contact.html" class="button">Me contacter</a>
+<section class="welcome-section">
+  <img src="images/photo.jpg" alt="Photo de Bastien Nizan" class="profile-image">
+  <div>
+    <h2>Bienvenue</h2>
+    <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel en cyberdéfense.</p>
+    <a href="contact.html" class="button">Me contacter</a>
+  </div>
 </section>
 
 <footer>
