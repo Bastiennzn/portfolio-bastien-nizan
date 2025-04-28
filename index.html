@@ -5,13 +5,48 @@
   <title>Accueil - Bastien Nizan</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Ajout de styles pour l'image */
+    /* Styles pour l'en-tête */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* Espace entre l'image et le texte */
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
     .profile-image {
-      width: 100px; /* Taille de l'icône */
-      height: 100px;
+      width: 120px; /* Taille fixe pour éviter la déformation */
+      height: 120px;
       border-radius: 50%; /* Rend l'image ronde */
-      float: left; /* Aligne l'image à gauche */
-      margin-right: 20px; /* Espace entre l'image et le texte */
+      object-fit: cover; /* Empêche la déformation de l'image */
+    }
+    header div {
+      text-align: left; /* Aligne le texte à gauche */
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #0078d7;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.4em; /* Augmente légèrement la taille de la police */
+      color: #555; /* Couleur plus douce pour un meilleur contraste */
+      font-weight: bold; /* Met en valeur le texte */
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Espace entre le texte et le logo */
+    }
+    .esna-logo {
+      width: 50px; /* Taille agrandie du logo */
+      height: auto;
+    }
+    section p {
+      font-size: 1.2em; /* Augmente la taille de la police pour une meilleure lisibilité */
+      line-height: 1.6; /* Ajoute de l'espace entre les lignes pour un meilleur confort de lecture */
+      color: #333; /* Couleur légèrement plus foncée pour le texte principal */
+      text-align: justify; /* Justifie le texte pour un rendu plus professionnel */
     }
   </style>
 </head>
@@ -26,9 +61,13 @@
 </nav>
 
 <header>
-  <img src="photo.jpg" class="profile-image">
-  <h1>Bastien Nizan</h1>
-  <p>Futur Ingénieur en Cyberdéfense</p>
+  <img src="photo.jpg" class="profile-image" alt="Photo de Bastien Nizan">
+  <div>
+    <h1>Bastien Nizan</h1>
+    <p>Futur Ingénieur en Cyberdéfense 
+      <img src="logo-ESNA.jpg" class="esna-logo" alt="Logo de l'ESNA">
+    </p>
+  </div>
 </header>
 
 <section>
