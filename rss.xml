@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Veille Technologique - Cybersécurité</title>
+    <link>https://www.bastien-nizan.fr/veille-techno.html</link>
+    <description>Les dernières mises à jour sur la cybersécurité</description>
+    <language>fr</language>
+    <lastBuildDate>Wed, 30 Apr 2025 12:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>Les cyberattaques en 2025 : tendances et prévisions</title>
+      <link>https://www.cybersecurity-insights.com/cyberattaques-2025</link>
+      <description>Analyse des cyberattaques les plus courantes en 2025 et des stratégies pour s'en protéger.</description>
+      <pubDate>Wed, 30 Apr 2025 09:00:00 +0000</pubDate>
+      <guid>https://www.cybersecurity-insights.com/cyberattaques-2025</guid>
+    </item>
+
+    <item>
+      <title>Les meilleures pratiques pour sécuriser vos données</title>
+      <link>https://www.cyberdefense.fr/securiser-donnees</link>
+      <description>Un guide complet pour protéger vos données personnelles et professionnelles contre les menaces numériques.</description>
+      <pubDate>Tue, 29 Apr 2025 14:00:00 +0000</pubDate>
+      <guid>https://www.cyberdefense.fr/securiser-donnees</guid>
+    </item>
+
+    <item>
+      <title>Les outils de pentest incontournables en 2025</title>
+      <link>https://www.osint-tools.com/pentest-2025</link>
+      <description>Découvrez les outils de test d'intrusion les plus performants pour évaluer la sécurité de vos systèmes.</description>
+      <pubDate>Mon, 28 Apr 2025 08:00:00 +0000</pubDate>
+      <guid>https://www.osint-tools.com/pentest-2025</guid>
+    </item>
+
+  </channel>
+</rss>

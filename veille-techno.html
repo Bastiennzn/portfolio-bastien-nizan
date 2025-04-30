@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Veille Technologique - Bastien Nizan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles spécifiques pour la page Veille Technologique */
+    header {
+      background-color: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #0078d7;
+    }
+    section {
+      padding: 20px;
+    }
+    section h2 {
+      font-size: 1.8em;
+      color: #333;
+    }
+    section p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #555;
+      text-align: justify;
+    }
+    .rss-feed {
+      margin-top: 20px;
+    }
+    .rss-feed ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .rss-feed li {
+      margin-bottom: 10px;
+    }
+    .rss-feed a {
+      color: #0078d7;
+      text-decoration: none;
+    }
+    .rss-feed a:hover {
+      text-decoration: underline;
+    }
+    .rss-articles {
+      list-style-type: none;
+      padding: 0;
+    }
+    .rss-articles li {
+      margin-bottom: 20px;
+    }
+    .rss-articles a {
+      color: #0078d7;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    .rss-articles a:hover {
+      text-decoration: underline;
+    }
+    .rss-articles p {
+      margin: 5px 0 0;
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="competences.html">Compétences</a>
+  <a href="Epreuve-E6.html">Épreuve E6</a>
+  <a href="veille-techno.html">Veille Technologique</a>
+  <a href="projets.html">Projets</a>
+  <a href="cv.html">CV</a>  
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Veille Technologique</h1>
+</header>
+
+<section>
+  <h2>Flux RSS</h2>
+  <p>Voici une sélection de flux RSS pour rester informé des dernières actualités technologiques :</p>
+  <div class="rss-feed">
+    <ul>
+      <li><a href="https://www.lemondeinformatique.fr/rss/rss.xml" target="_blank">Le Monde Informatique</a></li>
+      <li><a href="https://www.zdnet.fr/feeds/rss/actualites/" target="_blank">ZDNet France</a></li>
+      <li><a href="https://www.clubic.com/feed/actualite--rss" target="_blank">Clubic</a></li>
+      <li><a href="https://www.journaldunet.com/rss/" target="_blank">Journal du Net</a></li>
+      <li><a href="https://www.techcrunch.com/feed/" target="_blank">TechCrunch</a></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Articles récents sur la Cybersécurité</h2>
+  <ul class="rss-articles">
+    <li>
+      <a href="https://www.cybersecurity-insights.com/cyberattaques-2025" target="_blank">
+        <strong>Les cyberattaques en 2025 : tendances et prévisions</strong>
+      </a>
+      <p>Analyse des cyberattaques les plus courantes en 2025 et des stratégies pour s'en protéger.</p>
+    </li>
+    <li>
+      <a href="https://www.cyberdefense.fr/securiser-donnees" target="_blank">
+        <strong>Les meilleures pratiques pour sécuriser vos données</strong>
+      </a>
+      <p>Un guide complet pour protéger vos données personnelles et professionnelles contre les menaces numériques.</p>
+    </li>
+    <li>
+      <a href="https://www.osint-tools.com/pentest-2025" target="_blank">
+        <strong>Les outils de pentest incontournables en 2025</strong>
+      </a>
+      <p>Découvrez les outils de test d'intrusion les plus performants pour évaluer la sécurité de vos systèmes.</p>
+    </li>
+  </ul>
+</section>
+
+<footer>
+  &copy; 2025 Bastien Nizan – Portfolio personnel
+</footer>
+
+<script>
+  // Fonction pour récupérer et afficher un flux RSS
+  async function afficherFluxRSS() {
+    const fluxRSS = "https://www.lemondeinformatique.fr/rss/rss.xml"; // Exemple de flux RSS
+    const apiURL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(fluxRSS)}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+
+      if (data.status === "ok") {
+        const container = document.querySelector(".rss-feed");
+        const ul = document.createElement("ul");
+
+        data.items.forEach(item => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = item.link;
+          a.textContent = item.title;
+          a.target = "_blank";
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+
+        container.appendChild(ul);
+      } else {
+        console.error("Erreur lors de la récupération du flux RSS", data);
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération du flux RSS", error);
+    }
+  }
+
+  // Appeler la fonction au chargement de la page
+  document.addEventListener("DOMContentLoaded", afficherFluxRSS);
+</script>
+
+</body>
+</html>
