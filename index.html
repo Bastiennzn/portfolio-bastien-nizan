@@ -42,16 +42,42 @@
     .esna-logo {
       width: 50px; /* Taille agrandie du logo */
       height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .esna-logo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
     section p {
       font-size: 1.2em; /* Augmente la taille de la police pour une meilleure lisibilité */
       line-height: 1.6; /* Ajoute de l'espace entre les lignes pour un meilleur confort de lecture */
       color: #333; /* Couleur légèrement plus foncée pour le texte principal */
       text-align: justify; /* Justifie le texte pour un rendu plus professionnel */
     }
+    .logo-bubble {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      background-color: #0078d7;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 <body>
+
+<div class="logo-bubble">BN</div>
 
 <nav>
   <a href="index.html">Accueil</a>
@@ -61,7 +87,6 @@
   <a href="projets.html">Projets</a>
   <a href="cv.html">CV</a>
   <a href="contact.html">Contact</a>
-
 </nav>
 
 <header>
@@ -69,7 +94,9 @@
   <div>
     <h1>Bastien Nizan</h1>
     <p>Futur Ingénieur en Cyberdéfense 
-      <img src="logo-ESNA.jpg" class="esna-logo" alt="Logo de l'ESNA">
+      <a href="https://esna.bzh/formations/details/ingenieur-cyberdefense" target="_blank">
+        <img src="logo-ESNA.jpg" class="esna-logo" alt="Logo de l'ESNA">
+      </a>
     </p>
   </div>
 </header>

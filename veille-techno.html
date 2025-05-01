@@ -7,13 +7,16 @@
   <style>
     /* Styles spécifiques pour la page Veille Technologique */
     header {
-      background-color: #f4f4f4;
-      padding: 20px;
       text-align: center;
+      padding: 20px 0;
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #0078d7;
     }
     header h1 {
-      font-size: 2em;
-      color: #0078d7;
+      font-size: 2.5em;
+      color: #005f88;
+      text-align: center;
+      margin-bottom: 20px;
     }
     section {
       padding: 20px;
@@ -65,9 +68,28 @@
       font-size: 1em;
       color: #555;
     }
+    .logo-bubble {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      background-color: #0078d7;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 <body>
+
+<div class="logo-bubble">BN</div>
 
 <nav>
   <a href="index.html">Accueil</a>
@@ -80,43 +102,53 @@
 </nav>
 
 <header>
-  <h1>Veille Technologique</h1>
+  <h1>Veille Technologique : OSINT et Cybersécurité</h1>
 </header>
 
 <section>
-  <h2>Flux RSS</h2>
-  <p>Voici une sélection de flux RSS pour rester informé des dernières actualités technologiques :</p>
-  <div class="rss-feed">
-    <ul>
-      <li><a href="https://www.lemondeinformatique.fr/rss/rss.xml" target="_blank">Le Monde Informatique</a></li>
-      <li><a href="https://www.zdnet.fr/feeds/rss/actualites/" target="_blank">ZDNet France</a></li>
-      <li><a href="https://www.clubic.com/feed/actualite--rss" target="_blank">Clubic</a></li>
-      <li><a href="https://www.journaldunet.com/rss/" target="_blank">Journal du Net</a></li>
-      <li><a href="https://www.techcrunch.com/feed/" target="_blank">TechCrunch</a></li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Articles récents sur la Cybersécurité</h2>
+  <h2>Articles récents</h2>
   <ul class="rss-articles">
     <li>
-      <a href="https://www.cybersecurity-insights.com/cyberattaques-2025" target="_blank">
-        <strong>Les cyberattaques en 2025 : tendances et prévisions</strong>
+      <a href="https://www.zataz.com/osint/" target="_blank">
+        <strong>OSINT et cybersécurité - Zataz</strong>
       </a>
-      <p>Analyse des cyberattaques les plus courantes en 2025 et des stratégies pour s'en protéger.</p>
+      <p>Découvrez les dernières actualités sur l'OSINT et son rôle dans la cybersécurité.</p>
     </li>
     <li>
-      <a href="https://www.cyberdefense.fr/securiser-donnees" target="_blank">
-        <strong>Les meilleures pratiques pour sécuriser vos données</strong>
+      <a href="https://osintfr.com/articles/" target="_blank">
+        <strong>Articles récents - OSINTFR</strong>
       </a>
-      <p>Un guide complet pour protéger vos données personnelles et professionnelles contre les menaces numériques.</p>
+      <p>Explorez les articles récents sur l'OSINT et ses applications pratiques.</p>
     </li>
     <li>
-      <a href="https://www.osint-tools.com/pentest-2025" target="_blank">
-        <strong>Les outils de pentest incontournables en 2025</strong>
+      <a href="https://www.cert.ssi.gouv.fr" target="_blank">
+        <strong>Bulletins de sécurité et alertes critiques - CERT-FR</strong>
       </a>
-      <p>Découvrez les outils de test d'intrusion les plus performants pour évaluer la sécurité de vos systèmes.</p>
+      <p>Consultez les dernières alertes et vulnérabilités critiques publiées par le CERT français.</p>
+    </li>
+    <li>
+      <a href="https://www.ssi.gouv.fr" target="_blank">
+        <strong>Guides et publications sur la cybersécurité - ANSSI</strong>
+      </a>
+      <p>Découvrez les rapports d'incidents, guides et bonnes pratiques en cybersécurité en France.</p>
+    </li>
+    <li>
+      <a href="https://www.lemagit.fr" target="_blank">
+        <strong>Menaces actuelles et sécurité IT - LeMagIT</strong>
+      </a>
+      <p>Explorez les articles sur les menaces actuelles et les solutions de sécurité pour les entreprises.</p>
+    </li>
+    <li>
+      <a href="https://www.undernews.fr" target="_blank">
+        <strong>Actualités et protection des données - UnderNews</strong>
+      </a>
+      <p>Suivez les actualités sur le piratage, la protection des données et la vie privée.</p>
+    </li>
+    <li>
+      <a href="https://www.zataz.com" target="_blank">
+        <strong>Fuites de données et infos darknet - Zataz</strong>
+      </a>
+      <p>Restez informé des fuites de données, piratages et actualités du darknet.</p>
     </li>
   </ul>
 </section>
@@ -124,43 +156,6 @@
 <footer>
   &copy; 2025 Bastien Nizan – Portfolio personnel
 </footer>
-
-<script>
-  // Fonction pour récupérer et afficher un flux RSS
-  async function afficherFluxRSS() {
-    const fluxRSS = "https://www.lemondeinformatique.fr/rss/rss.xml"; // Exemple de flux RSS
-    const apiURL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(fluxRSS)}`;
-
-    try {
-      const response = await fetch(apiURL);
-      const data = await response.json();
-
-      if (data.status === "ok") {
-        const container = document.querySelector(".rss-feed");
-        const ul = document.createElement("ul");
-
-        data.items.forEach(item => {
-          const li = document.createElement("li");
-          const a = document.createElement("a");
-          a.href = item.link;
-          a.textContent = item.title;
-          a.target = "_blank";
-          li.appendChild(a);
-          ul.appendChild(li);
-        });
-
-        container.appendChild(ul);
-      } else {
-        console.error("Erreur lors de la récupération du flux RSS", data);
-      }
-    } catch (error) {
-      console.error("Erreur lors de la récupération du flux RSS", error);
-    }
-  }
-
-  // Appeler la fonction au chargement de la page
-  document.addEventListener("DOMContentLoaded", afficherFluxRSS);
-</script>
 
 </body>
 </html>

@@ -13,18 +13,26 @@
       color: #333;
     }
     nav {
-      background-color: #0078d7;
-      padding: 10px 20px;
       text-align: center;
+      margin-bottom: 20px;
     }
     nav a {
+      display: inline-block;
+      background: linear-gradient(135deg, #0078d7, #005f88);
       color: white;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 25px;
       text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.1em;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
     nav a:hover {
-      text-decoration: underline;
+      background: linear-gradient(135deg, #005f88, #003f5c);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     }
     header {
       text-align: center;
@@ -60,9 +68,57 @@
       font-size: 0.9em;
       border-top: 1px solid #ddd;
     }
+    .logo-bubble {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      background-color: #0078d7;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .cv-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .cv-image {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #0078d7;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .cv-download {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #0078d7;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .cv-download:hover {
+      background-color: #005f88;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
+
+<div class="logo-bubble">BN</div>
 
 <nav>
   <a href="index.html">Accueil</a>
@@ -78,9 +134,9 @@
   <h1>Mon CV</h1>
 </header>
 
-<section>
-  <!-- Affichage de l'image du CV -->
-  <img src="CV-NIZAN-Bastien.png" alt="CV de Bastien Nizan">
+<section class="cv-section">
+  <img src="CV-NIZAN-Bastien.png" alt="CV de Bastien Nizan" class="cv-image">
+  <a href="CV-NIZAN-Bastien.png" download class="cv-download">Télécharger le CV</a>
 </section>
 
 <footer>
