@@ -16,6 +16,7 @@ nav {
 nav a {
   display: inline-block;
   background: linear-gradient(135deg, #0078d7, #005f88);
+  background-size: 200% 200%; /* Préparation pour l'animation */
   color: white;
   padding: 12px 25px;
   margin: 8px;
@@ -24,12 +25,13 @@ nav a {
   font-size: 1.2rem;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, background-position 0.5s ease;
 }
 
 nav a:hover {
   background: linear-gradient(135deg, #005f88, #003f5c);
-  transform: translateY(-3px);
+  background-position: right center; /* Animation du gradient */
+  transform: translateY(-3px) rotate(-2deg); /* Ajout d'une légère rotation */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 

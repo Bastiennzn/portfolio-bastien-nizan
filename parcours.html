@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Parcours - Bastien Nizan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 80%;
+      max-width: 800px;
+    }
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #0078d7;
+    }
+    .timeline-item p {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
+    }
+    .timeline-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+<div class="logo-bubble">BN</div>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="competences.html">Compétences</a>
+  <a href="Epreuve-E6.html">Épreuve E6</a>
+  <a href="veille-techno.html">Veille Technologique</a>
+  <a href="parcours.html">Parcours</a>
+  <a href="cv.html">CV</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Parcours</h1>
+</header>
+
+<section class="timeline">
+  <div class="timeline-item">
+    <h3>2023 - Alternance Technicien Réseaux chez I3S</h3>
+    <p>Installation de vidéosurveillance, contrôle d'accès, et gestion des infrastructures réseau.</p>
+  </div>
+  <div class="timeline-item">
+    <h3>2022 - Stage Technicien Infrastructure</h3>
+    <p>Configuration de caméras IP Bosch/Axis au Musée d'arts de Nantes.</p>
+  </div>
+  <div class="timeline-item">
+    <h3>2021 - Début du BTS SIO option SISR</h3>
+    <p>Formation en systèmes et réseaux pour développer des compétences en infrastructure et cybersécurité.</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Bastien Nizan
+</footer>
+
+</body>
+</html>
