@@ -46,7 +46,62 @@
       font-weight: bold;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+    .config-section {
+      margin-top: 30px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .config-header {
+      background-color: #0078d7;
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .config-header:hover {
+      background-color: #005fa3;
+    }
+    .config-content {
+      display: none;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+    .config-content pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.9em;
+    }
+    .config-content code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #333;
+    }
+    .toggle-icon {
+      font-size: 1.5em;
+      transition: transform 0.3s;
+    }
+    .toggle-icon.open {
+      transform: rotate(180deg);
+    }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".config-header").forEach(header => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          const icon = header.querySelector(".toggle-icon");
+          content.style.display = content.style.display === "block" ? "none" : "block";
+          icon.classList.toggle("open");
+        });
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -67,12 +122,139 @@
 
 <section>
   <h2>Description de l'Épreuve E6</h2>
-  <p>Cette page est dédiée à l'épreuve E6, où je présente mes projets et réalisations en lien avec mes compétences en cyberdéfense et en infrastructure réseau. Vous trouverez ici des exemples concrets de mon travail et des solutions que j'ai développées.</p>
+  <p>Cette page est dédiée à l'épreuve E6, où je présente mes réalisations professionnelles en lien avec mes compétences en infrastructure réseaux et systèmes. Vous trouverez ici des exemples concrets de mon travail et des solutions que j'ai mis en place.</p>
 </section>
 
 <section>
   <h2>Documentation de l'Épreuve E6</h2>
-  <p>Cette section est dédiée à la documentation de l'épreuve E6. Vous y trouverez des explications détaillées sur les projets, les méthodologies utilisées, ainsi que les résultats obtenus.</p>
+  <p>Cette section est dédiée à la documentation de l'épreuve E6. Vous y trouverez des explications détaillées sur les réalisations professionnelles, les méthodologies utilisées, les tests ainsi que les résultats obtenus.</p>
+</section>
+
+<section>
+  <h2>Configuration des équipements réseaux</h2>
+
+  <div class="config-section">
+    <div class="config-header">
+      <span>Switch SWL2-CSup</span>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="config-content">
+      <pre>
+        <code>
+! Last configuration change at 09:26:49 UTC Mon Apr 28 2025 by admin
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+hostname SWL2-CSup
+boot-start-marker
+boot-end-marker
+enable secret 9 $9$K6LoWRvRMeSHCn$6qlXHb1tgbZJxyZ6vdXnhHnzP44RYTIj4WZ3srS9.vc
+username admin privilege 15 secret 9 $9$YNE8pQhSciRVlN$0OdCEg8GZrPTjPmjF1TNuieTXLXvXOf27LP3p/UePJw
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+aaa session-id common
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+no ip domain-lookup
+crypto pki trustpoint TP-self-signed-2974691072
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2974691072
+ revocation-check none
+ rsakeypair TP-self-signed-2974691072
+crypto pki certificate chain TP-self-signed-2974691072
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  ...existing certificate data...
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+vlan internal allocation policy ascending
+interface GigabitEthernet1/0/1
+ switchport access vlan 440
+ switchport mode access
+...existing interface configurations...
+interface Vlan440
+ ip address 172.16.40.5 255.255.255.0
+interface Vlan447
+ ip address 172.16.47.5 255.255.255.0
+ip http server
+ip http authentication local
+ip http secure-server
+snmp-server community MyCommunity RO
+line con 0
+line vty 0 4
+ transport input ssh
+line vty 5 15
+ transport input none
+end
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <div class="config-section">
+    <div class="config-header">
+      <span>Routeur RCsup</span>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="config-content">
+      <pre>
+        <code>
+! Last configuration change at 06:25:39 UTC Fri Apr 25 2025 by admin
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+hostname RCsup
+boot-start-marker
+boot-end-marker
+logging buffered 51200 warnings
+enable password cisco
+no aaa new-model
+no ipv6 cef
+ip source-route
+ip cef
+no ip domain lookup
+ip domain name yourdomain.com
+crypto pki trustpoint TP-self-signed-4026491785
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-4026491785
+ revocation-check none
+ rsakeypair TP-self-signed-4026491785
+crypto pki certificate chain TP-self-signed-4026491785
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  ...existing certificate data...
+interface GigabitEthernet0/0
+ ip address 172.16.40.1 255.255.255.0
+ duplex auto
+ speed auto
+interface GigabitEthernet0/1.447
+ encapsulation dot1Q 447
+ ip address 172.16.47.253 255.255.255.0
+ ip helper-address 172.16.47.11
+ ip helper-address 172.16.47.12
+interface GigabitEthernet0/1.448
+ encapsulation dot1Q 448
+ ip address 172.16.48.253 255.255.255.0
+ ip helper-address 172.16.47.11
+ ip helper-address 172.16.47.12
+ip route 0.0.0.0 0.0.0.0 172.16.47.254
+snmp-server community MyCommunity RO
+line con 0
+ login local
+line vty 0 4
+ privilege level 15
+ login local
+ transport input telnet ssh
+end
+        </code>
+      </pre>
+    </div>
+  </div>
+
 </section>
 
 <footer>
