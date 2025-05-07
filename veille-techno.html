@@ -5,98 +5,133 @@
   <title>Veille Technologique - Bastien Nizan</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Styles spécifiques pour la page Veille Technologique */
+    /* Styles futuristes */
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+    nav {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      display: inline-block;
+      background: linear-gradient(135deg, #0078d7, #005f88);
+      background-size: 200% 200%;
+      color: white;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease, background-position 0.5s ease;
+    }
+    nav a:hover {
+      background: linear-gradient(135deg, #005f88, #003f5c);
+      background-position: right center;
+      transform: translateY(-3px) rotate(-2deg);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
     header {
       text-align: center;
-      padding: 20px 0;
-      background-color: #f4f4f4;
-      border-bottom: 2px solid #0078d7;
+      padding: 50px 0;
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 2px solid #00d4ff;
+      position: relative;
     }
     header h1 {
-      font-size: 2.5em;
-      color: #005f88;
-      text-align: center;
-      margin-bottom: 10px;
+      font-size: 3em;
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
     }
     header p.definition {
       font-style: italic;
-      color: #444;
-      font-size: 1.2em;
+      color: #ddd;
+      font-size: 1.5em;
       max-width: 800px;
-      margin: 0 auto 20px auto;
+      margin: 0 auto;
     }
-    section {
+    .neon-border {
+      border: 2px solid #00d4ff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
       padding: 20px;
-    }
-    section h2 {
-      font-size: 1.8em;
-      color: #333;
-    }
-    section p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #555;
-      text-align: justify;
-    }
-    .rss-feed {
-      margin-top: 20px;
-    }
-    .rss-feed ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .rss-feed li {
-      margin-bottom: 10px;
-    }
-    .rss-feed a {
-      color: #0078d7;
-      text-decoration: none;
-    }
-    .rss-feed a:hover {
-      text-decoration: underline;
+      margin: 20px 0;
     }
     .rss-articles {
-      list-style-type: none;
-      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
     .rss-articles li {
-      margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .rss-articles li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff;
     }
     .rss-articles a {
-      color: #0078d7;
+      color: #00d4ff;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.5em;
+      font-weight: bold;
     }
     .rss-articles a:hover {
-      text-decoration: underline;
+      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
     }
     .rss-articles p {
-      margin: 5px 0 0;
-      font-size: 1em;
-      color: #555;
-    }
-    .logo-bubble {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      width: 50px;
-      height: 50px;
-      background-color: #0078d7;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin-top: 10px;
       font-size: 1.2em;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #ccc;
+    }
+    .floating-circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .floating-circles span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 212, 255, 0.5);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-50px) translateX(50px);
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="logo-bubble">BN</div>
+<div class="floating-circles">
+  <span style="top: 10%; left: 20%; animation-delay: 0s;"></span>
+  <span style="top: 30%; left: 50%; animation-delay: 2s;"></span>
+  <span style="top: 70%; left: 80%; animation-delay: 4s;"></span>
+  <span style="top: 50%; left: 10%; animation-delay: 6s;"></span>
+</div>
 
 <nav>
   <a href="index.html">Accueil</a>
@@ -104,6 +139,7 @@
   <a href="Epreuve-E6.html">Épreuve E6</a>
   <a href="veille-techno.html">Veille Technologique</a>
   <a href="parcours.html">Parcours</a>
+  <a href="cv.html">CV</a>
   <a href="contact.html">Contact</a>
 </nav>
 
@@ -115,49 +151,23 @@
 </header>
 
 <section>
-  <h2>Articles récents</h2>
+  <h2 class="neon-border">Articles récents</h2>
   <ul class="rss-articles">
     <li>
-      <a href="https://www.zataz.com/osint/" target="_blank">
-        <strong>OSINT et cybersécurité - Zataz</strong>
-      </a>
+      <a href="https://www.zataz.com/osint/" target="_blank">OSINT et cybersécurité - Zataz</a>
       <p>Découvrez les dernières actualités sur l'OSINT et son rôle dans la cybersécurité.</p>
     </li>
     <li>
-      <a href="https://osintfr.com/articles/" target="_blank">
-        <strong>Articles récents - OSINTFR</strong>
-      </a>
+      <a href="https://osintfr.com/articles/" target="_blank">Articles récents - OSINTFR</a>
       <p>Explorez les articles récents sur l'OSINT et ses applications pratiques.</p>
     </li>
     <li>
-      <a href="https://www.cert.ssi.gouv.fr" target="_blank">
-        <strong>Bulletins de sécurité et alertes critiques - CERT-FR</strong>
-      </a>
+      <a href="https://www.cert.ssi.gouv.fr" target="_blank">Bulletins de sécurité et alertes critiques - CERT-FR</a>
       <p>Consultez les dernières alertes et vulnérabilités critiques publiées par le CERT français.</p>
     </li>
     <li>
-      <a href="https://www.ssi.gouv.fr" target="_blank">
-        <strong>Guides et publications sur la cybersécurité - ANSSI</strong>
-      </a>
+      <a href="https://www.ssi.gouv.fr" target="_blank">Guides et publications sur la cybersécurité - ANSSI</a>
       <p>Découvrez les rapports d'incidents, guides et bonnes pratiques en cybersécurité en France.</p>
-    </li>
-    <li>
-      <a href="https://www.lemagit.fr" target="_blank">
-        <strong>Menaces actuelles et sécurité IT - LeMagIT</strong>
-      </a>
-      <p>Explorez les articles sur les menaces actuelles et les solutions de sécurité pour les entreprises.</p>
-    </li>
-    <li>
-      <a href="https://www.undernews.fr" target="_blank">
-        <strong>Actualités et protection des données - UnderNews</strong>
-      </a>
-      <p>Suivez les actualités sur le piratage, la protection des données et la vie privée.</p>
-    </li>
-    <li>
-      <a href="https://www.zataz.com" target="_blank">
-        <strong>Fuites de données et infos darknet - Zataz</strong>
-      </a>
-      <p>Restez informé des fuites de données, piratages et actualités du darknet.</p>
     </li>
   </ul>
 </section>
