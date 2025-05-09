@@ -3,53 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <title>Accueil - Bastien Nizan</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="alternate" type="application/rss+xml" title="Flux RSS" href="assets/rss/rss.xml">
+  <link rel="stylesheet" href="style.css">
   <style>
-    h2 {
-      background-color: #f4f4f4;
+    
+    
+    .profile-container {
+      display: flex;
+      flex-direction: row; /* Alignement horizontal */
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      padding: 20px;
+      margin: 20px auto; /* Centrage sans fixation */
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      width: fit-content; /* Ajuste la largeur au contenu */
+    }
+    .profile-details {
+      margin-right: 20px; /* Espacement entre le texte et la photo */
+      text-align: right;
+    }
+    .profile-details .name {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0078d7;
+      margin: 0;
+    }
+    .profile-details .subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 5px 0 0;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #0078d7;
+      object-fit: cover;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .profile-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .esna-logo {
+      margin-left: 10px; /* Décalage vers la droite */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .esna-logo img {
+      width: 100px; /* Taille réduite */
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .esna-logo img:hover {
+      transform: scale(1.1);
+    }
+    .esna-logo a {
+      text-decoration: none;
+    }
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 100px; /* Ajout d'un espace pour éviter que le footer cache les boutons */
+    }
+    .welcome-section {
+      text-align: center;
+      margin: 40px auto; /* Ajustement pour laisser de l'espace sous le cadre */
+      max-width: 1100px; /* Élargissement pour le texte */
+      padding: 30px;
+      background-color: #ffffff; /* Couleur de fond blanche */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-left: 5px solid #0078d7; /* Ajout d'une bordure gauche */
+    }
+    .welcome-section h2 {
+      font-size: 2.5rem; /* Taille augmentée */
+      color: #0078d7;
+      margin-bottom: 20px; /* Réduction de l'espace */
+      font-weight: bold;
+    }
+    .welcome-section p {
+      font-size: 1.2rem; /* Texte légèrement plus grand */
+      color: #333;
+      line-height: 1.8; /* Meilleure lisibilité */
+      margin: 0 auto;
+      max-width: 900px; /* Limite la largeur pour tenir sur deux lignes */
+    }
+    .buttons-container {
+      text-align: center;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center; /* Met les boutons côte à côte */
+      gap: 15px; /* Espacement entre les boutons */
+    }
+    .buttons-container .button,
+    .buttons-container .parcours-button {
+      padding: 8px 16px; /* Boutons plus petits */
+      font-size: 0.9rem;
+      width: auto; /* Ajuste la largeur automatiquement */
+      text-align: center;
+      border-radius: 5px;
+      background-color: #0078d7;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .buttons-container .button:hover,
+    .buttons-container .parcours-button:hover {
+      background-color: #005f88;
+    }
+    footer {
+      position: fixed; /* Fixe le footer en bas */
+      bottom: 0;
+      width: 100%;
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
       padding: 10px;
-      border-left: 5px solid #0078d7;
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+    footer a {
+      color: #00d4ff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-<div class="navbar">
-  <div class="logo-bubble">BN</div>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="competences.html">Compétences</a>
-    <a href="experience-i3s.html">Expérience I3S</a>
-    <a href="Epreuve-E6.html">Épreuve E6</a>
-    <a href="veille-techno.html">Veille Technologique</a>
-    <a href="parcours.html">Parcours</a>
-    <a href="cv.html">CV</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</div>
-
-<header>
-  <img src="assets/images/photo.jpg" class="profile-image" alt="Photo de Bastien Nizan">
-  <div>
-    <h1>Bastien Nizan</h1>
-    <p>Futur Ingénieur en Cyberdéfense 
-      <a href="https://esna.bzh/formations/details/ingenieur-cyberdefense" target="_blank">
-        <img src="assets/images/logo-ESNA.jpg" class="esna-logo" alt="Logo de l'ESNA">
-      </a>
-    </p>
+  <div class="page-container">
+    <div class="navbar">
+      <div class="logo-bubble">BN</div>
+      
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="competences.html">Compétences</a>
+        <a href="experience-i3s.html">Expérience I3S</a>
+        <a href="Epreuve-E6.html">Épreuve E6</a>
+        <a href="veille-techno.html">Veille Technologique</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <header class="profile-container">
+      <div class="profile-details">
+        <p class="name">Bastien NIZAN</p>
+        <p class="subtitle">Futur Ingénieur en Cyberdéfense</p>
+      </div>
+      <img src="photo.jpg" class="profile-image" alt="Photo de Bastien Nizan">
+    </header>
+    <section class="welcome-section">
+      <h2>Bienvenue</h2>
+      <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel dans le domaine de la cyberdéfense.</p>
+    </section>
+    <div class="buttons-container">
+      <a href="contact.html" class="button">Me contacter</a>
+      <a href="parcours.html" class="button">Découvrir mon parcours</a>
+    </div>
+    <footer>
+      &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html">Mentions Légales</a>
+    </footer>
   </div>
-</header>
-
-<section>
-  <h2>Bienvenue</h2>
-  <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel en cyberdéfense.</p>
-  <a href="contact.html" class="button">Me contacter</a>
-</section>
-
-<footer>
-  &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html">Mentions Légales</a>
-</footer>
-
 </body>
 </html>

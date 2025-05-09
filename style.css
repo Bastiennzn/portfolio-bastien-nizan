@@ -52,11 +52,10 @@ section {
 }
 
 footer {
-  background-color: #222;
+  background: linear-gradient(135deg, #222, #333);
   color: #ccc;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
   font-size: 0.9rem;
 }
 
@@ -121,4 +120,15 @@ nav a.active {
   font-size: 1.2em;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+  background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.esna-logo img {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
