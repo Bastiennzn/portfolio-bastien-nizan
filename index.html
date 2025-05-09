@@ -100,14 +100,15 @@
       text-align: center;
       margin-top: 30px;
       display: flex;
-      justify-content: center; /* Met les boutons côte à côte */
+      flex-direction: column; /* Boutons empilés verticalement */
+      align-items: center;
       gap: 15px; /* Espacement entre les boutons */
     }
     .buttons-container .button,
     .buttons-container .parcours-button {
-      padding: 8px 16px; /* Boutons plus petits */
-      font-size: 0.9rem;
-      width: auto; /* Ajuste la largeur automatiquement */
+      padding: 10px 20px; /* Taille ajustée pour un style propre */
+      font-size: 1rem;
+      width: 220px; /* Largeur uniforme */
       text-align: center;
       border-radius: 5px;
       background-color: #0078d7;
@@ -164,8 +165,8 @@
       <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel dans le domaine de la cyberdéfense.</p>
     </section>
     <div class="buttons-container">
+      <a href="parcours.html" class="parcours-button">Découvrir mon parcours</a>
       <a href="contact.html" class="button">Me contacter</a>
-      <a href="parcours.html" class="button">Découvrir mon parcours</a>
     </div>
     <footer>
       &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html">Mentions Légales</a>
