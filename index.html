@@ -3,100 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Accueil - Bastien Nizan</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="alternate" type="application/rss+xml" title="Flux RSS" href="rss.xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Flux RSS" href="assets/rss/rss.xml">
   <style>
-    /* Styles pour l'en-tête */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px; /* Espace entre l'image et le texte */
-      padding: 20px;
+    h2 {
       background-color: #f4f4f4;
-      text-align: center;
-    }
-    .profile-image {
-      width: 120px; /* Taille fixe pour éviter la déformation */
-      height: 120px;
-      border-radius: 50%; /* Rend l'image ronde */
-      object-fit: cover; /* Empêche la déformation de l'image */
-    }
-    header div {
-      text-align: left; /* Aligne le texte à gauche */
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      color: #0078d7;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.4em; /* Augmente légèrement la taille de la police */
-      color: #555; /* Couleur plus douce pour un meilleur contraste */
-      font-weight: bold; /* Met en valeur le texte */
-      display: flex;
-      align-items: center;
-      gap: 10px; /* Espace entre le texte et le logo */
-    }
-    .esna-logo {
-      width: 50px; /* Taille agrandie du logo */
-      height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .esna-logo:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    section p {
-      font-size: 1.2em; /* Augmente la taille de la police pour une meilleure lisibilité */
-      line-height: 1.6; /* Ajoute de l'espace entre les lignes pour un meilleur confort de lecture */
-      color: #333; /* Couleur légèrement plus foncée pour le texte principal */
-      text-align: justify; /* Justifie le texte pour un rendu plus professionnel */
-    }
-    .logo-bubble {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      width: 50px;
-      height: 50px;
-      background-color: #0078d7;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-left: 5px solid #0078d7;
     }
   </style>
 </head>
 <body>
 
-<div class="logo-bubble">BN</div>
-
-<nav>
-  <a href="index.html">Accueil</a>
-  <a href="competences.html">Compétences</a>
-  <a href="experience-i3s.html">Expérience I3S</a>
-  <a href="Epreuve-E6.html">Épreuve E6</a>
-  <a href="veille-techno.html">Veille Technologique</a>
-  <a href="parcours.html">Parcours</a>
-  <a href="cv.html">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+<div class="navbar">
+  <div class="logo-bubble">BN</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="competences.html">Compétences</a>
+    <a href="experience-i3s.html">Expérience I3S</a>
+    <a href="Epreuve-E6.html">Épreuve E6</a>
+    <a href="veille-techno.html">Veille Technologique</a>
+    <a href="parcours.html">Parcours</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
 
 <header>
-  <img src="photo.jpg" class="profile-image" alt="Photo de Bastien Nizan">
+  <img src="assets/images/photo.jpg" class="profile-image" alt="Photo de Bastien Nizan">
   <div>
     <h1>Bastien Nizan</h1>
     <p>Futur Ingénieur en Cyberdéfense 
       <a href="https://esna.bzh/formations/details/ingenieur-cyberdefense" target="_blank">
-        <img src="logo-ESNA.jpg" class="esna-logo" alt="Logo de l'ESNA">
+        <img src="assets/images/logo-ESNA.jpg" class="esna-logo" alt="Logo de l'ESNA">
       </a>
     </p>
   </div>
@@ -104,8 +43,7 @@
 
 <section>
   <h2>Bienvenue</h2>
-  <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel en cyberdéfense. </p>
-
+  <p>Actuellement étudiant en deuxième année d'un BTS SIO option SISR et alternant Technicien Réseaux et Infrastructure chez I3S, je poursuis mon projet professionnel en cyberdéfense.</p>
   <a href="contact.html" class="button">Me contacter</a>
 </section>
 

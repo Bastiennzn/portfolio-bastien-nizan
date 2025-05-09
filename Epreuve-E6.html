@@ -136,6 +136,19 @@
 
     // Suppression de tout comportement de défilement automatique
     window.scrollTo(0, 0);
+
+    function toggleFullScreen(elementId) {
+      const element = document.getElementById(elementId);
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) { /* Firefox */
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) { /* IE/Edge */
+        element.msRequestFullscreen();
+      }
+    }
   </script>
 </head>
 <body>
@@ -165,11 +178,17 @@
   <h2>Réalisations Professionnelles</h2>
   <div>
     <h3>RP1 : Mise en place d’un outil pour superviser l’état de santé des hôtes du réseau avec Zabbix</h3>
-    <iframe src="Epreuve pratique RP1 - NIZAN Bastien_VuLC.pdf"></iframe>
+    <div style="position: relative; margin-bottom: 40px;">
+      <iframe id="pdf1" src="Epreuve pratique RP1 - NIZAN Bastien_VuLC.pdf" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 8px;"></iframe>
+      <button onclick="toggleFullScreen('pdf1')" style="position: absolute; top: 10px; right: 10px; padding: 10px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000; font-size: 1.2em;">⛶</button>
+    </div>
   </div>
   <div>
     <h3>RP2 : Administration sous Windows Server 2022 : AD, DHCP, DNS, GPO, profils itinérants</h3>
-    <iframe src="Epreuve pratique RP2 - NIZAN BastienVuLC.pdf"></iframe>
+    <div style="position: relative;">
+      <iframe id="pdf2" src="Epreuve pratique RP2 - NIZAN BastienVuLC.pdf" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 8px;"></iframe>
+      <button onclick="toggleFullScreen('pdf2')" style="position: absolute; top: 10px; right: 10px; padding: 10px; background-color: #0078d7; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000; font-size: 1.2em;">⛶</button>
+    </div>
   </div>
 </section>
 
@@ -302,9 +321,8 @@ end
 
 </section>
 
-<footer>
-  &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html">Mentions Légales</a>
+<footer style="position: fixed; bottom: 0; width: 100%; background-color: #222; color: #ccc; text-align: center; padding: 10px; font-size: 0.9rem;">
+  &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html" style="color: #00d4ff; text-decoration: none;">Mentions Légales</a>
 </footer>
-
 </body>
 </html>
