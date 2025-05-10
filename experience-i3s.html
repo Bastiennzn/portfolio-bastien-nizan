@@ -70,16 +70,19 @@
     }
     .section-title {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.6rem; /* Taille conservée */
       color: #0078d7;
-      margin: 50px auto;
+      margin: 40px auto;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 4px solid #0078d7;
+      letter-spacing: 0.5px;
+      border-bottom: 3px solid #0078d7;
       display: inline-block;
       padding-bottom: 5px;
       width: fit-content;
+      white-space: nowrap; /* Empêche le texte de passer à la ligne */
+      overflow: hidden; /* Assure que le texte reste dans les limites */
+      text-overflow: ellipsis; /* Ajoute des points de suspension si nécessaire */
     }
     .section-container {
       margin: 40px auto;
@@ -250,6 +253,14 @@
       <div class="image-container">
         <img src="I3S/IMG01.png" alt="Synoptique Vidéosurveillance réseau industriel">
         <div class="fullscreen-icon-image" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG01.png')">⛶</div>
+      </div>
+    </section>
+
+    <section class="section-container">
+      <h2 class="section-title">Synoptique du réseau de Vidéosurveillance de Grand Lieu Communauté</h2>
+      <div class="image-container">
+        <img src="I3S/IMG04.png" alt="Synoptique réseau Grand Lieu Communauté">
+        <div class="fullscreen-icon-image" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG04.png')">⛶</div>
       </div>
     </section>
 
