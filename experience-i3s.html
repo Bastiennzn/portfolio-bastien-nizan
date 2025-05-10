@@ -38,13 +38,14 @@
     }
     .pdf-container {
       position: relative;
-      margin: 40px auto;
-      margin-bottom: 40px; /* Ajoute un espacement pour équilibrer les sections */
-      max-width: 800px;
+      margin: 0 auto;
       border: 1px solid #ddd;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .pdf-container iframe {
       width: 100%;
@@ -68,20 +69,25 @@
       transform: scale(1.1);
     }
     .section-title {
-      text-align: center; /* Assure le centrage horizontal */
-      font-size: 1.8rem;
-      color: #333;
-      margin: 40px auto; /* Uniformise l'espacement vertical */
-      font-weight: 600;
-      text-transform: none;
-      letter-spacing: 0.5px;
-      border-bottom: 2px solid #ddd;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #0078d7;
+      margin: 50px auto;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 4px solid #0078d7;
       display: inline-block;
       padding-bottom: 5px;
-      width: fit-content; /* Ajuste la largeur au contenu */
+      width: fit-content;
+    }
+    .section-container {
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: center;
     }
     .certifications-section {
-      margin-top: 40px; /* Ajuste l'espacement pour aligner verticalement */
+      margin-top: 40px;
       text-align: center;
     }
     .certifications-images {
@@ -96,10 +102,10 @@
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      object-fit: cover; /* Ajuste l'image pour qu'elle s'adapte au conteneur */
+      object-fit: cover;
     }
     .certifications-images img[alt="Certification Alcatel"] {
-      width: 200px; /* Ajuste la largeur pour les images en paysage */
+      width: 200px;
       height: auto;
     }
     .certifications-images img:hover {
@@ -160,9 +166,9 @@
       transform: scale(1.1);
     }
     .image-container {
-      position: relative; /* Nécessaire pour positionner l'icône */
+      position: relative;
       text-align: center;
-      margin: 40px auto;
+      margin: 0 auto;
     }
     .image-container img {
       max-width: 100%;
@@ -172,8 +178,8 @@
     }
     .fullscreen-icon-image {
       position: absolute;
-      top: 10px; /* Positionnement dans l'angle supérieur */
-      right: 10px; /* Positionnement dans l'angle droit */
+      top: 10px;
+      right: 10px;
       font-size: 1.5rem;
       color: #0078d7;
       cursor: pointer;
@@ -231,20 +237,23 @@
       <h1 style="text-align: center; font-size: 2.5rem; color: #0078d7; margin: 40px 0;">Mon parcours au sein d'I3S</h1>
     </header>
 
-    <section>
+    <section class="section-container">
       <h2 class="section-title">Présentation d'I3S</h2>
       <div class="pdf-container">
         <iframe src="I3S/PrésentationI3S.pdf" title="Présentation I3S"></iframe>
         <div class="fullscreen-icon" title="Plein écran" onclick="toggleFullScreen()">⛶</div>
       </div>
+    </section>
+
+    <section class="section-container">
+      <h2 class="section-title">Synoptique de vidéosurveillance d'un réseau industriel</h2>
       <div class="image-container">
-        <h2 class="section-title">Synoptique de vidéosurveillance d'un réseau industriel</h2>
         <img src="I3S/IMG01.png" alt="Synoptique Vidéosurveillance réseau industriel">
         <div class="fullscreen-icon-image" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG01.png')">⛶</div>
       </div>
     </section>
 
-    <section class="certifications-section">
+    <section class="section-container">
       <h2 class="section-title">Formations et Certifications</h2>
       <div class="certifications-images">
         <div class="certifications-container">
