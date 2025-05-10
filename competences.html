@@ -83,6 +83,21 @@
       background-color: #f4f4f4;
       border-bottom: 2px solid #0078d7;
     }
+    footer {
+      position: fixed; /* Fixe le footer en bas */
+      bottom: 0;
+      width: 100%;
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+    footer a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -148,8 +163,8 @@
         </a>
       </span>
       <span class="badge">
-        <a href="https://hackropole.fr/" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center;">
-          <img src="hackropole-logo.png" alt="Hackpole Logo">
+        <a href="https://hackpole.fr/" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center;">
+          <img src="hackpole-logo.png" alt="Hackpole Logo">
           Hackpole
         </a>
       </span>
@@ -180,8 +195,8 @@
   </div>
 </section>
 
-<footer style="position: fixed; bottom: 0; width: 100%; background-color: #222; color: #ccc; text-align: center; padding: 10px; font-size: 0.9rem;">
-  &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html" style="color: #00d4ff; text-decoration: none;">Mentions Légales</a>
+<footer>
+  &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html">Mentions Légales</a>
 </footer>
 </body>
 </html>

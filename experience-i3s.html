@@ -4,6 +4,212 @@
   <meta charset="UTF-8">
   <title>Expérience I3S - Bastien Nizan</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .experience-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .experience-item {
+      background-color: #f9f9f9;
+      border-left: 5px solid #0078d7;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .experience-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    .experience-item h3 {
+      font-size: 1.8rem;
+      color: #0078d7;
+      margin-bottom: 10px;
+    }
+    .experience-item p {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 0;
+    }
+    .pdf-container {
+      position: relative;
+      margin: 40px auto;
+      margin-bottom: 40px; /* Ajoute un espacement pour équilibrer les sections */
+      max-width: 800px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .pdf-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+    .fullscreen-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      color: #0078d7;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .fullscreen-icon:hover {
+      transform: scale(1.1);
+    }
+    .section-title {
+      text-align: center; /* Assure le centrage horizontal */
+      font-size: 1.8rem;
+      color: #333;
+      margin: 40px auto; /* Uniformise l'espacement vertical */
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #ddd;
+      display: inline-block;
+      padding-bottom: 5px;
+      width: fit-content; /* Ajuste la largeur au contenu */
+    }
+    .certifications-section {
+      margin-top: 40px; /* Ajuste l'espacement pour aligner verticalement */
+      text-align: center;
+    }
+    .certifications-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .certifications-images img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      object-fit: cover; /* Ajuste l'image pour qu'elle s'adapte au conteneur */
+    }
+    .certifications-images img[alt="Certification Alcatel"] {
+      width: 200px; /* Ajuste la largeur pour les images en paysage */
+      height: auto;
+    }
+    .certifications-images img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+    .certifications-container {
+      position: relative;
+      display: inline-block;
+    }
+    .fullscreen-icon-certification {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 1.2rem;
+      color: #0078d7;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 50%;
+      padding: 3px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .fullscreen-icon-certification:hover {
+      transform: scale(1.1);
+    }
+    .fullscreen-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .fullscreen-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .fullscreen-overlay .close-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      padding: 10px;
+      transition: transform 0.2s;
+    }
+    .fullscreen-overlay .close-icon:hover {
+      transform: scale(1.1);
+    }
+    .image-container {
+      position: relative; /* Nécessaire pour positionner l'icône */
+      text-align: center;
+      margin: 40px auto;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .fullscreen-icon-image {
+      position: absolute;
+      top: 10px; /* Positionnement dans l'angle supérieur */
+      right: 10px; /* Positionnement dans l'angle droit */
+      font-size: 1.5rem;
+      color: #0078d7;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .fullscreen-icon-image:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    function toggleFullScreen() {
+      const iframe = document.querySelector('.pdf-container iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Safari */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE11 */
+        iframe.msRequestFullscreen();
+      }
+    }
+    function toggleCertificationFullScreen(imageSrc) {
+      const overlay = document.querySelector('.fullscreen-overlay');
+      const overlayImage = overlay.querySelector('img');
+      overlayImage.src = imageSrc;
+      overlay.style.display = 'flex';
+    }
+
+    function closeFullScreen() {
+      const overlay = document.querySelector('.fullscreen-overlay');
+      overlay.style.display = 'none';
+    }
+  </script>
 </head>
 <body>
   <div class="page-container">
@@ -21,20 +227,45 @@
       </nav>
     </div>
 
-    <section>
-      <h2>Présentation I3S</h2>
-      <p>Chez I3S, j'ai eu l'opportunité de travailler sur divers projets liés à l'infrastructure réseau et à la sécurité informatique.</p>
-    </section>
+    <header>
+      <h1 style="text-align: center; font-size: 2.5rem; color: #0078d7; margin: 40px 0;">Mon parcours au sein d'I3S</h1>
+    </header>
 
     <section>
-      <h2>Nantes Digital Week</h2>
-      <p>Participation à des événements et ateliers sur les nouvelles technologies et la cybersécurité.</p>
+      <h2 class="section-title">Présentation d'I3S</h2>
+      <div class="pdf-container">
+        <iframe src="I3S/PrésentationI3S.pdf" title="Présentation I3S"></iframe>
+        <div class="fullscreen-icon" title="Plein écran" onclick="toggleFullScreen()">⛶</div>
+      </div>
+      <div class="image-container">
+        <h2 class="section-title">Synoptique de vidéosurveillance d'un réseau industriel</h2>
+        <img src="I3S/IMG01.png" alt="Synoptique Vidéosurveillance réseau industriel">
+        <div class="fullscreen-icon-image" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG01.png')">⛶</div>
+      </div>
     </section>
 
-    <section>
-      <h2>Formations et Certifications</h2>
-      <p>Obtention de certifications en sécurité réseau et en gestion d'infrastructure.</p>
+    <section class="certifications-section">
+      <h2 class="section-title">Formations et Certifications</h2>
+      <div class="certifications-images">
+        <div class="certifications-container">
+          <img src="I3S/Alcatel.jpg" alt="Certification Alcatel">
+          <div class="fullscreen-icon-certification" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/Alcatel.jpg')">⛶</div>
+        </div>
+        <div class="certifications-container">
+          <img src="I3S/Bosch.jpg" alt="Certification Bosch">
+          <div class="fullscreen-icon-certification" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/Bosch.jpg')">⛶</div>
+        </div>
+        <div class="certifications-container">
+          <img src="I3S/Milestone.jpg" alt="Certification Milestone">
+          <div class="fullscreen-icon-certification" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/Milestone.jpg')">⛶</div>
+        </div>
+      </div>
     </section>
+
+    <div class="fullscreen-overlay" onclick="closeFullScreen()">
+      <img src="" alt="Certification en plein écran">
+      <div class="close-icon" onclick="closeFullScreen()">✖</div>
+    </div>
 
     <footer>
       &copy; 2025 Bastien Nizan – Portfolio personnel | <a href="mentions-legales.html">Mentions Légales</a>
