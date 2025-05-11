@@ -70,19 +70,16 @@
     }
     .section-title {
       text-align: center;
-      font-size: 1.6rem; /* Taille conservée */
+      font-size: 1.5rem;
       color: #0078d7;
-      margin: 40px auto;
+      margin: 50px auto;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 3px solid #0078d7;
+      letter-spacing: 1px;
+      border-bottom: 4px solid #0078d7;
       display: inline-block;
       padding-bottom: 5px;
       width: fit-content;
-      white-space: nowrap; /* Empêche le texte de passer à la ligne */
-      overflow: hidden; /* Assure que le texte reste dans les limites */
-      text-overflow: ellipsis; /* Ajoute des points de suspension si nécessaire */
     }
     .section-container {
       margin: 40px auto;
@@ -171,13 +168,52 @@
     .image-container {
       position: relative;
       text-align: center;
-      margin: 0 auto;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .image-container img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .small-image {
+      max-width: 100px;
+      height: auto;
+      margin-left: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .fullscreen-icon-small {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 1.2rem;
+      color: #0078d7;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 50%;
+      padding: 3px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .fullscreen-icon-small:hover {
+      transform: scale(1.1);
+    }
+    .image-section {
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+    }
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
     }
     .fullscreen-icon-image {
       position: absolute;
@@ -195,10 +231,77 @@
     .fullscreen-icon-image:hover {
       transform: scale(1.1);
     }
+    .pdf-section {
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+    }
+    .pdf-section iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .fullscreen-icon-pdf {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      color: #0078d7;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .fullscreen-icon-pdf:hover {
+      transform: scale(1.1);
+    }
+    .video-section {
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+    }
+    .video-section video {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .video-controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .video-controls button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: #0078d7;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .video-controls button:hover {
+      background-color: #005a9e;
+    }
   </style>
   <script>
     function toggleFullScreen() {
       const iframe = document.querySelector('.pdf-container iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Safari */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE11 */
+        iframe.msRequestFullscreen();
+      }
+    }
+    function toggleFullScreenForPDF(pdfSelector) {
+      const iframe = document.querySelector(pdfSelector);
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
       } else if (iframe.webkitRequestFullscreen) { /* Safari */
@@ -217,6 +320,15 @@
     function closeFullScreen() {
       const overlay = document.querySelector('.fullscreen-overlay');
       overlay.style.display = 'none';
+    }
+
+    function toggleVideoPlayback(videoId) {
+      const video = document.getElementById(videoId);
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
     }
   </script>
 </head>
@@ -256,12 +368,40 @@
       </div>
     </section>
 
+    <section class="pdf-section">
+      <iframe id="annsi-pdf" src="ANNSI.pdf" title="Documentation ANSSI"></iframe>
+      <div class="fullscreen-icon-pdf" title="Plein écran" onclick="toggleFullScreenForPDF('#annsi-pdf')">⛶</div>
+    </section>
+
+    <section class="pdf-section">
+      <h2 class="section-title">Détection départ de feu - Solution Araani</h2>
+      <iframe id="araani-pdf" src="Araani.pdf" title="Détection départ de feu - Solution Araani"></iframe>
+      <div class="fullscreen-icon-pdf" title="Plein écran" onclick="toggleFullScreenForPDF('#araani-pdf')">⛶</div>
+    </section>
+
+    <section class="video-section">
+      <video id="cam-video" src="I3S/Cam.mp4" controls></video>
+      <div class="video-controls">
+        <button onclick="toggleVideoPlayback('cam-video')">Lecture / Pause</button>
+      </div>
+    </section>
+
     <section class="section-container">
       <h2 class="section-title">Synoptique du réseau de Vidéosurveillance de Grand Lieu Communauté</h2>
       <div class="image-container">
         <img src="I3S/IMG04.png" alt="Synoptique réseau Grand Lieu Communauté">
-        <div class="fullscreen-icon-image" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG04.png')">⛶</div>
+        <div class="fullscreen-icon" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG04.png')">⛶</div>
+        <div class="small-image">
+          <img src="I3S/IMG03.jpg" alt="Image supplémentaire">
+          <div class="fullscreen-icon-small" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG03.jpg')">⛶</div>
+        </div>
       </div>
+    </section>
+
+    <section class="image-section">
+      <h2 class="section-title">Nantes Digital Week</h2>
+      <img src="I3S/IMG02.jpg" alt="Nantes Digital Week">
+      <div class="fullscreen-icon-image" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/IMG02.jpg')">⛶</div>
     </section>
 
     <section class="section-container">
@@ -275,7 +415,7 @@
           <img src="I3S/Bosch.jpg" alt="Certification Bosch">
           <div class="fullscreen-icon-certification" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/Bosch.jpg')">⛶</div>
         </div>
-        <div class="certifications-container">
+        <div class="certifications-container"></div>
           <img src="I3S/Milestone.jpg" alt="Certification Milestone">
           <div class="fullscreen-icon-certification" title="Plein écran" onclick="toggleCertificationFullScreen('I3S/Milestone.jpg')">⛶</div>
         </div>
